@@ -144,51 +144,38 @@ nav .signup-btn:hover {
   }
 }
 
-
-
-.hero {
-  background-color: #e8faff;
-  padding: 100px 20px;
-  text-align: center;
-}
-
-.about {
-  padding: 50px 20px;
-  background-color: #f0f8ff;
-}
-
 .hero {
   background: linear-gradient(to right, #cfefff, #e8faff);
-  padding: 100px 20px;
+  padding: 200px 40px;
   text-align: center;
   color: #00334e;
 }
 
 .hero-content {
-  max-width: 700px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
 .hero h1 {
-  font-size: 3rem;
+  font-size: 4rem;
   font-weight: bold;
-  margin-bottom: 20px;
-  color: #0077b6; 
+  margin-bottom: 30px;
+  color: #0077b6;
 }
 
 .hero p {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
+  font-size: 1.6rem;
+  margin-bottom: 50px;
   color: #023047;
 }
 
 .hero-btn {
-  background-color: #ff7aa2; 
+  background-color: #ff7aa2;
   color: white;
   border: none;
-  padding: 12px 30px;
+  padding: 18px 40px;
   border-radius: 30px;
-  font-size: 1rem;
+  font-size: 1.4rem;
   cursor: pointer;
   transition: 0.3s ease;
 }
@@ -196,6 +183,13 @@ nav .signup-btn:hover {
 .hero-btn:hover {
   background-color: #f45c94;
 }
+
+.about {
+  padding: 100px 40px;
+  background-color: #f0f8ff;
+}
+
+
 
 .search-container {
   text-align: center;
