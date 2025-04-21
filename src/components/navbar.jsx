@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom"; // add Link here
 
 export default function Navbar() {
   const navigate = useNavigate();
@@ -7,11 +7,11 @@ export default function Navbar() {
   return (
     <nav>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-        <a href="/" className="logo">AgriHydra</a>
+        <Link to="/" className="logo">AgriHydra</Link>
         <div>
-          <a href="/">Home</a>
-          <a href="/tracker">Tracker</a>
-          <a href="#tips">Tips</a>
+          <Link to="/">Home</Link>
+          <Link to="/tracker">Tracker</Link>
+          <Link to="/tips">Tips</Link> {/* 👈 normal looking text link but SPA routing */}
           <button className="login-btn" onClick={() => navigate("/login")}>Login</button>
           <button className="signup-btn" onClick={() => navigate("/signup")}>Signup</button>
         </div>

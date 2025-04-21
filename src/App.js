@@ -8,14 +8,16 @@ import Hero from './components/hero';
 import WaterTracker from './components/watertracker';
 import Login from './components/login';
 import Signup from './components/signup';
+import Tips from './components/tips';
+
 import './App.css';
 
 function App() {
   return (
     <Router>
       <Navbar />
-      <Routes>
 
+      <Routes>
         <Route
           path="/"
           element={
@@ -26,8 +28,6 @@ function App() {
             </>
           }
         />
-
-
         <Route
           path="/tracker"
           element={
@@ -46,12 +46,20 @@ function App() {
             </>
           }
         />
-
         <Route
           path="/signup"
           element={
             <>
               <Signup />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/tips"
+          element={
+            <>
+              <Tips />
               <Footer />
             </>
           }

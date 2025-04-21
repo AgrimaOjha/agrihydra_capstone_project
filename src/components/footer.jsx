@@ -19,9 +19,9 @@ export default function Footer() {
           <div className="footer-section">
             <h3>Follow Us</h3>
             <div className="socials">
-              <a href="https"><img src="/icons/facebook.svg" alt="Facebook" /></a>
-              <a href="https"><img src="/icons/twitter.svg" alt="LinkedIn" /></a>
-              <a href="https"><img src="/icons/instagram.svg" alt="Instagram" /></a>
+              <a href="https"><img src="images/facebook.png" alt="Facebook" /></a>
+              <a href="https"><img src="images/linkedin.png" alt="LinkedIn" /></a>
+              <a href="https"><img src="images/instagram.png" alt="Instagram" /></a>
             </div>
           </div>
         </div>
