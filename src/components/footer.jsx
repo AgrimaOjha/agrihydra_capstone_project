@@ -13,7 +13,7 @@ export default function Footer() {
           </div>
           <div className="footer-section">
             <h3>Contact</h3>
-            <p>Email: agrihydra@info</p>
+            <p>Email: agrihydra@info.co.in</p>
             <p>Phone: +91 22222 11110</p>
           </div>
           <div className="footer-section">

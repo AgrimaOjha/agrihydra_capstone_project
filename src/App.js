@@ -1,38 +1,62 @@
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import Navbar from './components/navbar';
 import Footer from './components/footer';
 import Hero from './components/hero';
-import Search from './components/search'; 
+// import Search from './components/search'; 
 import WaterTracker from './components/watertracker';
+import Login from './components/login';
+import Signup from './components/signup';
 import './App.css';
 
 function App() {
   return (
     <Router>
-      <div>
-        <Navbar />
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <Hero />
-                <Search />
-                <Footer />
-              </>
-            }
-          />
-          <Route
-            path="/tracker"
-            element={
-              <>
-                <WaterTracker />
-                <Footer />
-              </>
-            }
-          />
-        </Routes>
-      </div>
+      <Navbar />
+      <Routes>
+
+        <Route
+          path="/"
+          element={
+            <>
+              <Hero />
+              {/* <Search /> */}
+              <Footer />
+            </>
+          }
+        />
+
+
+        <Route
+          path="/tracker"
+          element={
+            <>
+              <WaterTracker />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <>
+              <Login />
+              <Footer />
+            </>
+          }
+        />
+
+        <Route
+          path="/signup"
+          element={
+            <>
+              <Signup />
+              <Footer />
+            </>
+          }
+        />
+      </Routes>
     </Router>
   );
 }
