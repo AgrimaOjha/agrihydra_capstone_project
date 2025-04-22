@@ -1,0 +1,105 @@
+.reminder-container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+    margin-bottom: 50px; 
+  }
+  
+  .reminder-container h2 {
+    font-size: 2rem;
+    color: #e91e63; 
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+  
+  .input-group {
+    margin-bottom: 25px;
+  }
+  
+  .input-group label {
+    display: block;
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .input-group input {
+    padding: 12px;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 400px;
+    margin-top: 5px;
+    border-radius: 8px;
+    border: 1px solid #e91e63; 
+    transition: border-color 0.3s ease;
+  }
+  
+  .input-group input:focus {
+    border-color: #f48fb1;
+    outline: none;
+  }
+  
+  .reminder-btn {
+    background-color: #e91e63;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .reminder-btn:hover {
+    background-color: #f48fb1; 
+  }
+  
+  .reminder-set-message {
+    margin-top: 30px;
+    font-size: 1.1rem;
+    color: #333;
+  }
+  
+  .reminder-set-message p {
+    font-weight: bold;
+    color: #e91e63; 
+  }
+  
+  .reminder-container:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+  }
+  .reminder-btn {
+    background: linear-gradient(145deg, #e91e63, #f48fb1); 
+    color: white;
+    border: none;
+    padding: 16px 32px;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1), -4px -4px 8px rgba(255, 255, 255, 0.3); 
+  }
+  
+  .reminder-btn:hover {
+    background: linear-gradient(145deg, #f48fb1, #e91e63);
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.2), -6px -6px 12px rgba(255, 255, 255, 0.4); 
+    transform: translateY(-3px);
+  }
+  
+  .reminder-btn:active {
+    transform: translateY(1px);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1), -2px -2px 5px rgba(255, 255, 255, 0.3);
+  }
+  

@@ -1,29 +1,34 @@
+import React from "react";
 import { useNavigate } from "react-router-dom";
-import base from "../assets/3210.jpg"
+import './hero.css';
 
 export default function HeroSection() {
   const navigate = useNavigate();
 
-  const handleClick = () => {
+  const handleStartTrackingClick = () => {
     navigate("/tracker");
   };
 
+  const handleSetReminderClick = () => {
+    navigate("/reminder");
+  };
+
   return (
-    <section
-      className="hero"
-      style={{
-        backgroundImage: `url(${base})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
+    <section className="hero">
+      <div className="hero-backdrop"></div>
       <div className="hero-content">
         <h1>Sip. Track. Repeat.</h1>
         <p>Stay hydrated without the hassle. Just log your water and let us handle the rest.</p>
-        <button className="hero-btn" onClick={handleClick}>
-          Start Tracking
-        </button>
+        
+        {/* Buttons container */}
+        <div className="hero-buttons-container">
+          <button className="hero-btn" onClick={handleStartTrackingClick}>
+            Start Tracking
+          </button>
+          <button className="set-reminder-btn" onClick={handleSetReminderClick}>
+            Set Hydration Reminder
+          </button>
+        </div>
       </div>
     </section>
   );

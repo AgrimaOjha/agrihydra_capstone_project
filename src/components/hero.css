@@ -1,0 +1,75 @@
+.hero {
+    padding: 240px 60px;
+    text-align: center;
+    color: #00334e;
+  }
+  
+  .hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .hero h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: darkblue;
+  }
+  
+  .hero p {
+    font-size: 1.6rem;
+    margin-bottom: 50px;
+    color: rgb(0, 65, 0);
+  }
+  
+  .hero-btn {
+    background-color: rgb(226, 105, 61);
+    color: white;
+    border: none;
+    padding: 18px 40px;
+    border-radius: 30px;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  .hero-btn:hover {
+    background-color: #f45c94;
+  }
+  .hero {
+    position: relative;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: url('../assets/3210.jpg') no-repeat center center;
+    background-size: cover;
+  }
+  .hero-btn, .set-reminder-btn {
+    background-color: rgb(226, 105, 61);
+    color: white;
+    border: none;
+    padding: 18px 40px;
+    border-radius: 30px;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  .hero-btn:hover, .set-reminder-btn:hover {
+    background-color: #f45c94;
+  }
+  
+  .hero-btn:active, .set-reminder-btn:active {
+    transform: translateY(1px);
+  }
+  
+  .hero-buttons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; 
+    margin-top: 20px;
+  }
+  

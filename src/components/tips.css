@@ -1,0 +1,112 @@
+.tips-container {
+    min-height: 100vh; 
+    padding: 3rem 2rem;
+    background: linear-gradient(to right, #dbeafe, #e0f7fa);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; 
+    padding-bottom: 4rem;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  
+  
+  .tips-container h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #0a2e58;
+    margin-bottom: 2rem;
+    text-shadow: 1px 2px 2px rgba(0,0,0,0.1);
+    letter-spacing: 1px;
+    text-align: center;
+    width: 100%;
+  }
+  
+  
+  .search-input {
+    width: 100%;
+    max-width: 500px;
+    padding: 0.8rem 1rem;
+    margin-bottom: 2rem;
+    border-radius: 20px;
+    border: 2px solid #5c7cfa;
+    font-size: 1.1rem;
+    color: #333;
+    background: #fff;
+    outline: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .search-input:focus {
+    border-color: #339af0;
+  }
+  
+  
+  .tips-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  
+  .tip-card {
+    width: 280px;
+    padding: 1.5rem;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    color: white;
+    cursor: pointer;
+    font-family: "Segoe UI", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #5c7cfa;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .tip-card h4 {
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .tip-card p {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+  
+  
+  .tip-card:hover {
+    transform: scale(1.08);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  }
+  
+  
+  .shade-0 { background-color: #4dabf7; }
+  .shade-1 { background-color: #339af0; }
+  .shade-2 { background-color: #228be6; }
+  .shade-3 { background-color: #1c7ed6; }
+  .shade-4 { background-color: #15aabf; }
+  .shade-5 { background-color: #1098ad; }
+  
+  @media (max-width: 768px) {
+    .tip-card {
+      width: 90%; 
+    }
+  
+    .tips-container h1 {
+      font-size: 2.2rem;
+    }
+  }
+  
+  
+  

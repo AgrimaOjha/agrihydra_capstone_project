@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./signup.css";
 import { useNavigate } from "react-router-dom";
 
 export default function Signup() {
@@ -15,9 +16,9 @@ export default function Signup() {
       return;
     }
 
-    // Simulate successful signup
+
     console.log("Signed up with:", email, password);
-    navigate("/"); // Redirect to home after signup
+    navigate("/"); 
   };
 
   return (

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import "./tracker.css"
 const WaterTracker = () => {
   const [cupsFilled, setCupsFilled] = useState(0);
 

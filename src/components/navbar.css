@@ -1,0 +1,65 @@
+nav {
+    background-color:#0065fcd9;
+    padding: 16px;
+    color: white;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    margin-right: 20px;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  
+  nav a:hover {
+    color: #6238f9; 
+  }
+  
+  nav .logo {
+    font-size: 22px;
+    font-weight: bold;
+    color:#fddd6a;
+  }
+  
+  
+  @media (max-width: 768px) {
+    nav > div {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    nav a, button {
+      margin-bottom: 10px;
+    }
+  }
+  
+  
+  nav button {
+    margin-left: 10px;
+    padding: 6px 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  nav .login-btn {
+    background-color: white;
+    color: #000000;
+  }
+  
+  nav .login-btn:hover {
+    background-color: #5f79ce;
+  }
+  
+  nav .signup-btn {
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+  }
+  
+  nav .signup-btn:hover {
+    background-color: #5f79ce;
+  }
+  

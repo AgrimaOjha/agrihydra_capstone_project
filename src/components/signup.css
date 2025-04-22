@@ -1,0 +1,10 @@
+.signup-redirect {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .signup-redirect a {
+    color: #0072ff;
+    text-decoration: none;
+    font-weight: 500;
+  }
