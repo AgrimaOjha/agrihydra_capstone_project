@@ -8,7 +8,9 @@ body {
 
 
 nav {
-  background-color: skyblue;
+  background-color:#3883F6
+
+  ;
   padding: 16px;
   color: white;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -157,8 +159,8 @@ nav .signup-btn:hover {
 }
 
 .hero {
-  background: linear-gradient(to right, #cfefff, #e8faff);
-  padding: 200px 40px;
+  
+  padding: 200px 60px;
   text-align: center;
   color: #00334e;
 }
@@ -172,13 +174,13 @@ nav .signup-btn:hover {
   font-size: 4rem;
   font-weight: bold;
   margin-bottom: 30px;
-  color: #0077b6;
+  color: #0021b6;
 }
 
 .hero p {
   font-size: 1.6rem;
   margin-bottom: 50px;
-  color: #023047;
+  color: #1b1253;
 }
 
 .hero-btn {

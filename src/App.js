@@ -9,11 +9,11 @@ import WaterTracker from './components/watertracker';
 import Login from './components/login';
 import Signup from './components/signup';
 import Tips from './components/tips';
-
 import './App.css';
 
 function App() {
   return (
+    
     <Router>
       <Navbar />
 
@@ -63,6 +63,7 @@ function App() {
               <Footer />
             </>
           }
+          
         />
       </Routes>
     </Router>
