@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./tips.css"
+import './tips.css';
 export default function Tips() {
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -18,7 +18,7 @@ export default function Tips() {
     { title: "Monitor Your Urine Color", content: "Keep an eye on the color of your urine—it should be light yellow. Dark urine can be a sign of dehydration and a signal to drink more water." },
   ];
 
-
+  // Filter tips based on search query
   const filteredTips = tipsData.filter(tip => 
     tip.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
     tip.content.toLowerCase().includes(searchQuery.toLowerCase())
@@ -28,7 +28,7 @@ export default function Tips() {
     <>
       <h1>Tips for Staying Hydrated</h1>
 
-
+      {/* Search Box */}
       <div style={{ textAlign: "center", marginBottom: "2rem" }}>
         <input
           type="text"
@@ -36,8 +36,8 @@ export default function Tips() {
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           style={{
-            width: '80%', 
-            maxWidth: '500px', 
+            width: '80%', // Adjust width
+            maxWidth: '500px', // Maximum width
             padding: '0.8rem 1rem',
             borderRadius: '25px',
             border: '2px solid #5c7cfa',
@@ -51,6 +51,7 @@ export default function Tips() {
         />
       </div>
 
+      
       <div className="tips-grid">
         {filteredTips.map((tip, index) => (
           <div key={index} className={`tip-card shade-${index % 6}`}>
