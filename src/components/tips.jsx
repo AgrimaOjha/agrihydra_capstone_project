@@ -36,8 +36,8 @@ export default function Tips() {
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           style={{
-            width: '80%', // Adjust width
-            maxWidth: '500px', // Maximum width
+            width: '80%', 
+            maxWidth: '500px', 
             padding: '0.8rem 1rem',
             borderRadius: '25px',
             border: '2px solid #5c7cfa',

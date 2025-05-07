@@ -20,7 +20,7 @@ export default function HeroSection() {
         <h1>Sip. Track. Repeat.</h1>
         <p>Stay hydrated without the hassle. Just log your water and let us handle the rest.</p>
         
-        {/* Buttons container */}
+        
         <div className="hero-buttons-container">
           <button className="hero-btn" onClick={handleStartTrackingClick}>
             Start Tracking

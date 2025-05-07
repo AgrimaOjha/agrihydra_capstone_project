@@ -1,5 +1,5 @@
 import React from "react";
-import "./navbar.css"; // Import your CSS file for styling
+import "./navbar.css"; 
 import { useNavigate, Link, useLocation } from "react-router-dom";
 
 export default function Navbar() {
@@ -16,11 +16,11 @@ export default function Navbar() {
         left: 0,
         width: "100%",
         zIndex: 50,
-        backgroundColor: isHomePage ? "transparent" : "#87CEEB", // Sky blue for other pages
-        color: isHomePage ? "white" : "#000", // White text for home, black text for other pages
+        backgroundColor: isHomePage ? "transparent" : "#87CEEB", 
+        color: isHomePage ? "white" : "#000", 
         padding: "16px",
-        backdropFilter: isHomePage ? "blur(10px)" : "none", // Blur effect only on homepage
-        boxShadow: !isHomePage ? "0 2px 8px rgba(0, 0, 0, 0.2)" : "none", // Shadow for other pages
+        backdropFilter: isHomePage ? "blur(10px)" : "none", 
+        boxShadow: !isHomePage ? "0 2px 8px rgba(0, 0, 0, 0.2)" : "none", 
       }}
     >
       <div
@@ -38,7 +38,7 @@ export default function Navbar() {
           style={{
             fontWeight: "bold",
             fontSize: "22px",
-            color: isHomePage ? "#fddd6a" : "#003366", // Yellow color for logo
+            color: isHomePage ? "#fddd6a" : "#003366", 
             textDecoration: "none",
           }}
         >
