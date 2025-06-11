@@ -18,7 +18,7 @@ export default function Tips() {
     { title: "Monitor Your Urine Color", content: "Keep an eye on the color of your urine—it should be light yellow. Dark urine can be a sign of dehydration and a signal to drink more water." },
   ];
 
-  // Filter tips based on search query
+
   const filteredTips = tipsData.filter(tip => 
     tip.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
     tip.content.toLowerCase().includes(searchQuery.toLowerCase())
@@ -28,7 +28,7 @@ export default function Tips() {
     <>
       <h1>Tips for Staying Hydrated</h1>
 
-      {/* Search Box */}
+  
       <div style={{ textAlign: "center", marginBottom: "2rem" }}>
         <input
           type="text"
