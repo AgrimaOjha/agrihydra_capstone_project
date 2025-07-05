@@ -1,12 +1,21 @@
-import React from "react";
-import "./navbar.css"; 
+import React, { useEffect, useState } from "react";
+import "./navbar.css";
 import { useNavigate, Link, useLocation } from "react-router-dom";
+import { auth } from "../firebase";
+import { onAuthStateChanged, signOut } from "firebase/auth";
 
 export default function Navbar() {
   const navigate = useNavigate();
   const location = useLocation();
-
   const isHomePage = location.pathname === "/";
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+    return () => unsubscribe();
+  }, []);
 
   return (
     <nav
@@ -16,11 +25,11 @@ export default function Navbar() {
         left: 0,
         width: "100%",
         zIndex: 50,
-        backgroundColor: isHomePage ? "transparent" : "#87CEEB", 
-        color: isHomePage ? "white" : "#000", 
+        backgroundColor: isHomePage ? "transparent" : "#87CEEB",
+        color: isHomePage ? "white" : "#000",
         padding: "16px",
-        backdropFilter: isHomePage ? "blur(10px)" : "none", 
-        boxShadow: !isHomePage ? "0 2px 8px rgba(0, 0, 0, 0.2)" : "none", 
+        backdropFilter: isHomePage ? "blur(10px)" : "none",
+        boxShadow: !isHomePage ? "0 2px 8px rgba(0, 0, 0, 0.2)" : "none",
       }}
     >
       <div
@@ -38,12 +47,13 @@ export default function Navbar() {
           style={{
             fontWeight: "bold",
             fontSize: "22px",
-            color: isHomePage ? "#fddd6a" : "#003366", 
+            color: isHomePage ? "#fddd6a" : "#003366",
             textDecoration: "none",
           }}
         >
           AgriHydra
         </Link>
+
         <div style={{ display: "flex", gap: "1.5rem", alignItems: "center" }}>
           <Link
             to="/"
@@ -72,31 +82,61 @@ export default function Navbar() {
           >
             Tips
           </Link>
-          <button
-            className="login-btn"
-            onClick={() => navigate("/login")}
-            style={{
-              background: isHomePage ? "white" : "#000",
-              color: isHomePage ? "#000" : "white",
-              padding: "0.5rem 1rem",
-              borderRadius: "0.5rem",
-            }}
-          >
-            Login
-          </button>
-          <button
-            className="signup-btn"
-            onClick={() => navigate("/signup")}
-            style={{
-              background: isHomePage ? "black" : "#fff",
-              color: isHomePage ? "white" : "#000",
-              padding: "0.5rem 1rem",
-              borderRadius: "0.5rem",
-              border: isHomePage ? "none" : "1px solid black",
-            }}
-          >
-            Signup
-          </button>
+
+          {user ? (
+            <>
+              <span
+                style={{
+                  color: isHomePage ? "white" : "black",
+                  fontWeight: "500",
+                }}
+              >
+                Hello, {user.displayName || user.email.split("@")[0]}
+
+              </span>
+              <button
+                className="signup-btn"
+                onClick={() => signOut(auth)}
+                style={{
+                  background: isHomePage ? "black" : "#fff",
+                  color: isHomePage ? "white" : "#000",
+                  padding: "0.5rem 1rem",
+                  borderRadius: "0.5rem",
+                  border: isHomePage ? "none" : "1px solid black",
+                }}
+              >
+                Logout
+              </button>
+            </>
+          ) : (
+            <>
+              <button
+                className="login-btn"
+                onClick={() => navigate("/login")}
+                style={{
+                  background: isHomePage ? "white" : "#000",
+                  color: isHomePage ? "#000" : "white",
+                  padding: "0.5rem 1rem",
+                  borderRadius: "0.5rem",
+                }}
+              >
+                Login
+              </button>
+              <button
+                className="signup-btn"
+                onClick={() => navigate("/signup")}
+                style={{
+                  background: isHomePage ? "black" : "#fff",
+                  color: isHomePage ? "white" : "#000",
+                  padding: "0.5rem 1rem",
+                  borderRadius: "0.5rem",
+                  border: isHomePage ? "none" : "1px solid black",
+                }}
+              >
+                Signup
+              </button>
+            </>
+          )}
         </div>
       </div>
     </nav>

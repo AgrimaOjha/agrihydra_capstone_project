@@ -1,24 +1,40 @@
 import React, { useState } from "react";
 import "./signup.css";
 import { useNavigate } from "react-router-dom";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { auth } from "../firebase.js";
 
 export default function Signup() {
+  const [name, setName] = useState(""); // 👈 added name state
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirm, setConfirm] = useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  const handleSignup = (e) => {
+  const handleSignup = async (e) => {
     e.preventDefault();
+    setError("");
 
     if (password !== confirm) {
-      alert("Passwords do not match ❌");
+      setError("Passwords do not match ❌");
       return;
     }
 
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
 
-    console.log("Signed up with:", email, password);
-    navigate("/"); 
+      // ✅ Update displayName
+      await updateProfile(userCredential.user, {
+        displayName: name,
+      });
+
+      console.log("User signed up successfully!");
+      navigate("/");
+    } catch (err) {
+      console.error("Signup error:", err.message);
+      setError("Signup failed: " + err.message);
+    }
   };
 
   return (
@@ -27,6 +43,14 @@ export default function Signup() {
         <h2>Join AgriHydra 🚰</h2>
         <p>Create an account to start tracking</p>
         <form onSubmit={handleSignup}>
+          <input
+            type="text"
+            placeholder="Full Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+          />
+
           <input
             type="email"
             placeholder="Email address"
@@ -52,6 +76,7 @@ export default function Signup() {
           />
 
           <button type="submit">Sign Up</button>
+          {error && <p className="error">{error}</p>}
         </form>
         <p className="signup-redirect">
           Already have an account? <a href="/login">Log in</a>

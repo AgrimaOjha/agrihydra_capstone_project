@@ -1,18 +1,27 @@
 import React, { useState } from "react";
-import './login.css'
+import './login.css';
 import { useNavigate } from "react-router-dom";
-
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebase"; // adjust the path as needed
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate(); 
-  const handleLogin = (e) => {
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
+
+  const handleLogin = async (e) => {
     e.preventDefault();
+    setError("");
 
-    console.log("Logging in with", email, password);
-
-    navigate("/");
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      console.log("Login successful");
+      navigate("/");
+    } catch (err) {
+      console.error("Login error:", err.message);
+      setError("Invalid email or password");
+    }
   };
 
   return (
@@ -38,6 +47,7 @@ export default function Login() {
           />
 
           <button type="submit">Login</button>
+          {error && <p className="error">{error}</p>}
         </form>
         <p className="signup-redirect">
           Don't have an account? <a href="/signup">Sign up</a>
