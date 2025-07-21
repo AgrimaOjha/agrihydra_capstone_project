@@ -9,6 +9,7 @@ import Login from './components/login';
 import Signup from './components/signup';
 import Tips from './components/tips';
 import Reminder from './components/reminder'; 
+import Convo from './components/convo'; 
 
 import './App.css';
 
@@ -17,7 +18,6 @@ function App() {
     <Router>
       <Navbar />
       <Routes>
-        
         <Route
           path="/"
           element={
@@ -27,7 +27,6 @@ function App() {
             </>
           }
         />
-        
         <Route
           path="/tracker"
           element={
@@ -64,12 +63,20 @@ function App() {
             </div>
           }
         />
-        
         <Route
           path="/reminder"
           element={
             <div className="page-content">
-              <Reminder /> 
+              <Reminder />
+              <Footer />
+            </div>
+          }
+        />
+        <Route
+          path="/community"
+          element={
+            <div className="page-content">
+              <Convo /> 
               <Footer />
             </div>
           }

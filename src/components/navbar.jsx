@@ -82,6 +82,15 @@ export default function Navbar() {
           >
             Tips
           </Link>
+          <Link
+            to="/community"
+            style={{
+            color: isHomePage ? "white" : "black",
+            textDecoration: "none",
+          }}
+          >
+          Community
+          </Link>
 
           {user ? (
             <>

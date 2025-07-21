@@ -1,0 +1,38 @@
+
+.community-tips-container {
+  padding: 200px;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+textarea {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  resize: vertical;
+}
+
+button {
+  padding: 0.6rem 1.2rem;
+  background-color: #3384fd;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.tips-list {
+  margin-top: 2rem;
+  text-align: left;
+}
+
+.tip-card {
+  background: #2b79bd;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  border-left: 5px solid #3384fd;
+}
