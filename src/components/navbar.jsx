@@ -9,6 +9,7 @@ export default function Navbar() {
   const location = useLocation();
   const isHomePage = location.pathname === "/";
   const [user, setUser] = useState(null);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -20,27 +21,13 @@ export default function Navbar() {
   return (
     <nav
       style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        width: "100%",
-        zIndex: 50,
         backgroundColor: isHomePage ? "transparent" : "#87CEEB",
         color: isHomePage ? "white" : "#000",
-        padding: "16px",
         backdropFilter: isHomePage ? "blur(10px)" : "none",
         boxShadow: !isHomePage ? "0 2px 8px rgba(0, 0, 0, 0.2)" : "none",
       }}
     >
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          maxWidth: "1200px",
-          margin: "0 auto",
-        }}
-      >
+      <div className="nav-container">
         <Link
           to="/"
           className="logo"
@@ -54,58 +41,54 @@ export default function Navbar() {
           AgriHydra
         </Link>
 
-        <div style={{ display: "flex", gap: "1.5rem", alignItems: "center" }}>
+        <div
+          className="menu-icon"
+          onClick={() => setMenuOpen((prev) => !prev)}
+        >
+          ☰
+        </div>
+
+        <div className={`nav-links ${menuOpen ? "show" : ""}`}>
           <Link
             to="/"
-            style={{
-              color: isHomePage ? "white" : "black",
-              textDecoration: "none",
-            }}
+            style={{ color: isHomePage ? "white" : "black", textDecoration: "none" }}
+            onClick={() => setMenuOpen(false)}
           >
             Home
           </Link>
           <Link
             to="/tracker"
-            style={{
-              color: isHomePage ? "white" : "black",
-              textDecoration: "none",
-            }}
+            style={{ color: isHomePage ? "white" : "black", textDecoration: "none" }}
+            onClick={() => setMenuOpen(false)}
           >
             Tracker
           </Link>
           <Link
             to="/tips"
-            style={{
-              color: isHomePage ? "white" : "black",
-              textDecoration: "none",
-            }}
+            style={{ color: isHomePage ? "white" : "black", textDecoration: "none" }}
+            onClick={() => setMenuOpen(false)}
           >
             Tips
           </Link>
           <Link
-            to="/c"
-            style={{
-            color: isHomePage ? "white" : "black",
-            textDecoration: "none",
-          }}
+            to="/community"
+            style={{ color: isHomePage ? "white" : "black", textDecoration: "none" }}
+            onClick={() => setMenuOpen(false)}
           >
-          Community
+            Community
           </Link>
 
           {user ? (
             <>
-              <span
-                style={{
-                  color: isHomePage ? "white" : "black",
-                  fontWeight: "500",
-                }}
-              >
+              <span style={{ color: isHomePage ? "white" : "black", fontWeight: "500" }}>
                 Hello, {user.displayName || user.email.split("@")[0]}
-
               </span>
               <button
                 className="signup-btn"
-                onClick={() => signOut(auth)}
+                onClick={() => {
+                  signOut(auth);
+                  setMenuOpen(false);
+                }}
                 style={{
                   background: isHomePage ? "black" : "#fff",
                   color: isHomePage ? "white" : "#000",
@@ -121,7 +104,10 @@ export default function Navbar() {
             <>
               <button
                 className="login-btn"
-                onClick={() => navigate("/login")}
+                onClick={() => {
+                  navigate("/login");
+                  setMenuOpen(false);
+                }}
                 style={{
                   background: isHomePage ? "white" : "#000",
                   color: isHomePage ? "#000" : "white",
@@ -133,7 +119,10 @@ export default function Navbar() {
               </button>
               <button
                 className="signup-btn"
-                onClick={() => navigate("/signup")}
+                onClick={() => {
+                  navigate("/signup");
+                  setMenuOpen(false);
+                }}
                 style={{
                   background: isHomePage ? "black" : "#fff",
                   color: isHomePage ? "white" : "#000",

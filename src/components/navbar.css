@@ -1,65 +1,110 @@
 nav {
-    background-color:#0065fcd9;
-    padding: 16px;
-    color: white;
+  background-color: #0065fcd9;
+  padding: 16px;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+}
+
+nav > .nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  flex-wrap: wrap;
+}
+
+/* Logo */
+nav .logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #fddd6a;
+  text-decoration: none;
+}
+
+/* Nav links and buttons wrapper */
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #6238f9;
+}
+
+nav button {
+  padding: 6px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+nav .login-btn {
+  background-color: white;
+  color: #000000;
+}
+
+nav .login-btn:hover {
+  background-color: #5f79ce;
+}
+
+nav .signup-btn {
+  background-color: #000000;
+  color: rgb(255, 255, 255);
+}
+
+nav .signup-btn:hover {
+  background-color: #5f79ce;
+}
+
+/* Hamburger menu icon */
+.menu-icon {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #fff;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
   }
-  
-  nav a {
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-    margin-right: 20px;
-    font-weight: 500;
-    transition: color 0.3s;
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem;
   }
-  
-  nav a:hover {
-    color: #6238f9; 
+
+  .nav-links.show {
+    display: flex;
   }
-  
-  nav .logo {
-    font-size: 22px;
-    font-weight: bold;
-    color:#fddd6a;
+
+  .nav-links a,
+  .nav-links button {
+    margin: 8px 0;
   }
-  
-  
-  @media (max-width: 768px) {
-    nav > div {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  
-    nav a, button {
-      margin-bottom: 10px;
-    }
+
+  nav > .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
   }
-  
-  
-  nav button {
-    margin-left: 10px;
-    padding: 6px 14px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: 500;
-    transition: background-color 0.3s, color 0.3s;
-  }
-  
-  nav .login-btn {
-    background-color: white;
-    color: #000000;
-  }
-  
-  nav .login-btn:hover {
-    background-color: #5f79ce;
-  }
-  
-  nav .signup-btn {
-    background-color: #000000;
-    color: rgb(255, 255, 255);
-  }
-  
-  nav .signup-btn:hover {
-    background-color: #5f79ce;
-  }
-  
+}
