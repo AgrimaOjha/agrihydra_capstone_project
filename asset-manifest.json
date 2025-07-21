@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/agrihydra_capstone_project/static/css/main.83e6d5a7.css",
-    "main.js": "/agrihydra_capstone_project/static/js/main.db0ef871.js",
+    "main.css": "/agrihydra_capstone_project/static/css/main.f813d5eb.css",
+    "main.js": "/agrihydra_capstone_project/static/js/main.a7884626.js",
     "static/media/3210.jpg": "/agrihydra_capstone_project/static/media/3210.d55d681af2c9d12d2640.jpg",
     "index.html": "/agrihydra_capstone_project/index.html",
-    "main.83e6d5a7.css.map": "/agrihydra_capstone_project/static/css/main.83e6d5a7.css.map",
-    "main.db0ef871.js.map": "/agrihydra_capstone_project/static/js/main.db0ef871.js.map"
+    "main.f813d5eb.css.map": "/agrihydra_capstone_project/static/css/main.f813d5eb.css.map",
+    "main.a7884626.js.map": "/agrihydra_capstone_project/static/js/main.a7884626.js.map"
   },
   "entrypoints": [
-    "static/css/main.83e6d5a7.css",
-    "static/js/main.db0ef871.js"
+    "static/css/main.f813d5eb.css",
+    "static/js/main.a7884626.js"
   ]
 }
