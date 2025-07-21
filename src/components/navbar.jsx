@@ -83,7 +83,7 @@ export default function Navbar() {
             Tips
           </Link>
           <Link
-            to="/community"
+            to="/c"
             style={{
             color: isHomePage ? "white" : "black",
             textDecoration: "none",
