@@ -15,7 +15,7 @@ export default function CommunityTips() {
   const [tipsList, setTipsList] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // Fetch tips from Firestore
+
   const fetchTips = async () => {
     setLoading(true);
     try {
@@ -29,7 +29,6 @@ export default function CommunityTips() {
     setLoading(false);
   };
 
-  // Submit new tip
   const handleSubmit = async () => {
     if (!tip.trim()) return;
 
@@ -74,7 +73,6 @@ export default function CommunityTips() {
         </p>
       )}
 
-      {/* Display tips */}
       <div className="tips-list">
         {loading ? (
           <p>Loading tips...</p>
