@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import './reminder.css';
+import { auth } from "../firebase";
 
 const Reminder = () => {
   const [reminderTime, setReminderTime] = useState("");
   const [reminderMessage, setReminderMessage] = useState("");
   const [isReminderSet, setIsReminderSet] = useState(false);
-
+  const [userEmail, setUserEmail] = useState("");
 
   const handleSetReminder = () => {
     if (!reminderTime || !reminderMessage) {
@@ -28,6 +29,8 @@ const Reminder = () => {
       setIsReminderSet(false); 
     }, timeUntilReminder);
 
+    const email = auth.currentUser?.email;
+    setUserEmail(email || "your registered email");
     setIsReminderSet(true);
   };
 
@@ -61,7 +64,8 @@ const Reminder = () => {
         </div>
       ) : (
         <div className="reminder-set-message">
-          <p>Reminder is set for {new Date(reminderTime).toLocaleString()}.</p>
+          <p>✅ Reminder is set for <strong>{new Date(reminderTime).toLocaleString()}</strong>.</p>
+          <p>📧 Mail sent to <strong>{userEmail}</strong> too!</p>
         </div>
       )}
     </div>
