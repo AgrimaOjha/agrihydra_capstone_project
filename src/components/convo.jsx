@@ -54,7 +54,7 @@ export default function CommunityTips() {
     <div className="community-tips-container">
       <h2>💡 Community Hydration Tips</h2>
 
-      {/* Only show input if user is logged in */}
+      
       {auth.currentUser ? (
         <div className="tip-form">
           <textarea
