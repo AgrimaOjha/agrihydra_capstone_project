@@ -24,7 +24,7 @@ export default function Signup() {
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
 
-      // ✅ Update displayName
+      
       await updateProfile(userCredential.user, {
         displayName: name,
       });
