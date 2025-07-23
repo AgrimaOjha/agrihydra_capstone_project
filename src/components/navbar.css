@@ -20,7 +20,7 @@ nav > .nav-container {
   flex-wrap: wrap;
 }
 
-/* Logo */
+
 nav .logo {
   font-size: 22px;
   font-weight: bold;
@@ -28,7 +28,7 @@ nav .logo {
   text-decoration: none;
 }
 
-/* Nav links and buttons wrapper */
+
 .nav-links {
   display: flex;
   gap: 1.5rem;
@@ -73,7 +73,6 @@ nav .signup-btn:hover {
   background-color: #5f79ce;
 }
 
-/* Hamburger menu icon */
 .menu-icon {
   display: none;
   font-size: 24px;
@@ -81,7 +80,6 @@ nav .signup-btn:hover {
   color: #fff;
 }
 
-/* Mobile styles */
 @media (max-width: 768px) {
   .menu-icon {
     display: block;
